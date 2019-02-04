@@ -5,8 +5,8 @@ package gqlgensm
 import (
 	"fmt"
 	"io"
-	"presenters-benchmark/pkg/common"
-	"presenters-benchmark/pkg/domainHotelCommon"
+	"github.com/travelgateX/presenters-benchmark/pkg/common"
+	"github.com/travelgateX/presenters-benchmark/pkg/domainHotelCommon"
 	"strconv"
 )
 

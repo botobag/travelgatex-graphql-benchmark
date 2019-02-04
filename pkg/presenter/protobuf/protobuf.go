@@ -3,8 +3,8 @@ package protobuf
 import (
 	"encoding/json"
 	"github.com/golang/protobuf/proto"
+	"github.com/travelgateX/presenters-benchmark/pkg/presenter"
 	"net/http"
-	"presenters-benchmark/pkg/presenter"
 )
 
 type Candidate struct{}

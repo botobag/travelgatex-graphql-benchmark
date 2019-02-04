@@ -3,8 +3,9 @@ package domainHotelCommon
 import (
 	"fmt"
 	"io"
-	"presenters-benchmark/pkg/access"
 	"strconv"
+
+	"github.com/travelgateX/presenters-benchmark/pkg/access"
 )
 
 var UnknownType = fmt.Errorf("unknown input type")

@@ -1,8 +1,9 @@
 package domainHotelCommon
 
 import (
-	"presenters-benchmark/pkg/access"
 	"sort"
+
+	"github.com/travelgateX/presenters-benchmark/pkg/access"
 )
 
 type Option struct {

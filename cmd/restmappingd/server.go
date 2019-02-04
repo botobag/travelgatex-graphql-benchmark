@@ -4,10 +4,10 @@ import (
 	"log"
 	"net/http"
 	"os"
-	"presenters-benchmark/pkg/presenter"
-	"presenters-benchmark/pkg/presenter/restmapping"
 
 	"github.com/99designs/gqlgen/handler"
+	"github.com/travelgateX/presenters-benchmark/pkg/presenter"
+	"github.com/travelgateX/presenters-benchmark/pkg/presenter/restmapping"
 )
 
 const defaultPort = "8080"

@@ -1,9 +1,10 @@
 package gqlgen
 
 import (
-	"github.com/99designs/gqlgen/handler"
 	"net/http"
-	"presenters-benchmark/pkg/presenter"
+
+	"github.com/99designs/gqlgen/handler"
+	"github.com/travelgateX/presenters-benchmark/pkg/presenter"
 )
 
 type Candidate struct{}

@@ -2,8 +2,8 @@ package presenter
 
 import (
 	"encoding/json"
+	"github.com/travelgateX/presenters-benchmark/pkg/domainHotelCommon"
 	"reflect"
-	"presenters-benchmark/pkg/domainHotelCommon"
 )
 
 type Option domainHotelCommon.Option

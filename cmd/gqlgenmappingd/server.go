@@ -4,10 +4,10 @@ import (
 	"log"
 	"net/http"
 	"os"
-	"presenters-benchmark/pkg/presenter"
-	"presenters-benchmark/pkg/presenter/gqlgen"
 
 	"github.com/99designs/gqlgen/handler"
+	"github.com/travelgateX/presenters-benchmark/pkg/presenter"
+	"github.com/travelgateX/presenters-benchmark/pkg/presenter/gqlgen"
 )
 
 const defaultPort = "8080"
