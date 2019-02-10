@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"net/http/httptest"
 	"github.com/travelgateX/presenters-benchmark/pkg/presenter"
+	"github.com/travelgateX/presenters-benchmark/pkg/presenter/artemis"
 	"github.com/travelgateX/presenters-benchmark/pkg/presenter/gophers"
 	"github.com/travelgateX/presenters-benchmark/pkg/presenter/gqlgen"
 	gqlgensm "github.com/travelgateX/presenters-benchmark/pkg/presenter/gqlgensm"
@@ -96,6 +97,7 @@ var funcs = []struct {
 	Name      string
 	Candidate presenter.CandidateHandlerFunc
 }{
+	{"artemis", artemis.Candidate{}},
 	{"gophers", gophers.Candidate{}},
 	{"gqlgen mapping", gqlgen.Candidate{}},
 	{"gqlgen service models", gqlgensm.Candidate{}},
@@ -168,6 +170,15 @@ func BenchmarkCandidate_gqlgen_servicemodels_1_high(b *testing.B) {
 	})
 }
 
+func BenchmarkCandidate_artemis_1_high(b *testing.B) {
+	benchmarkCandidates(b, candidateBenchmark{
+		Candidate:    artemis.Candidate{},
+		HTTPStatus:   http.StatusOK,
+		OptionNumber: 1,
+		ResolveScale: presenter.ResolveScaleHigh,
+	})
+}
+
 func BenchmarkCandidate_gophers_1_high(b *testing.B) {
 	benchmarkCandidates(b, candidateBenchmark{
 		Candidate:    gophers.Candidate{},
@@ -207,6 +218,15 @@ func BenchmarkCandidate_gqlgen_2000_high(b *testing.B) {
 func BenchmarkCandidate_gqlgen_servicemodels_2000_high(b *testing.B) {
 	benchmarkCandidates(b, candidateBenchmark{
 		Candidate:    gqlgensm.Candidate{},
+		HTTPStatus:   http.StatusOK,
+		OptionNumber: 2000,
+		ResolveScale: presenter.ResolveScaleHigh,
+	})
+}
+
+func BenchmarkCandidate_artemis_2000_high(b *testing.B) {
+	benchmarkCandidates(b, candidateBenchmark{
+		Candidate:    artemis.Candidate{},
 		HTTPStatus:   http.StatusOK,
 		OptionNumber: 2000,
 		ResolveScale: presenter.ResolveScaleHigh,
@@ -257,6 +277,15 @@ func BenchmarkCandidate_gqlgen_servicemodels_7000_high(b *testing.B) {
 	})
 }
 
+func BenchmarkCandidate_artemis_7000_high(b *testing.B) {
+	benchmarkCandidates(b, candidateBenchmark{
+		Candidate:    artemis.Candidate{},
+		HTTPStatus:   http.StatusOK,
+		OptionNumber: 7000,
+		ResolveScale: presenter.ResolveScaleHigh,
+	})
+}
+
 func BenchmarkCandidate_gophers_7000_high(b *testing.B) {
 	benchmarkCandidates(b, candidateBenchmark{
 		Candidate:    gophers.Candidate{},
@@ -293,6 +322,15 @@ func BenchmarkCandidate_gqlgen_20000_high(b *testing.B) {
 func BenchmarkCandidate_gqlgen_servicemodels_20000_high(b *testing.B) {
 	benchmarkCandidates(b, candidateBenchmark{
 		Candidate:    gqlgensm.Candidate{},
+		HTTPStatus:   http.StatusOK,
+		OptionNumber: 20000,
+		ResolveScale: presenter.ResolveScaleHigh,
+	})
+}
+
+func BenchmarkCandidate_artemis_20000_high(b *testing.B) {
+	benchmarkCandidates(b, candidateBenchmark{
+		Candidate:    artemis.Candidate{},
 		HTTPStatus:   http.StatusOK,
 		OptionNumber: 20000,
 		ResolveScale: presenter.ResolveScaleHigh,
@@ -337,6 +375,15 @@ func BenchmarkCandidate_gqlgen_65536_high(b *testing.B) {
 func BenchmarkCandidate_gqlgen_servicemodels_65536_high(b *testing.B) {
 	benchmarkCandidates(b, candidateBenchmark{
 		Candidate:    gqlgensm.Candidate{},
+		HTTPStatus:   http.StatusOK,
+		OptionNumber: 65536,
+		ResolveScale: presenter.ResolveScaleHigh,
+	})
+}
+
+func BenchmarkCandidate_artemis_65536_high(b *testing.B) {
+	benchmarkCandidates(b, candidateBenchmark{
+		Candidate:    artemis.Candidate{},
 		HTTPStatus:   http.StatusOK,
 		OptionNumber: 65536,
 		ResolveScale: presenter.ResolveScaleHigh,
@@ -389,6 +436,15 @@ func BenchmarkCandidate_gqlgen_servicemodels_1_medium(b *testing.B) {
 	})
 }
 
+func BenchmarkCandidate_artemis_1_medium(b *testing.B) {
+	benchmarkCandidates(b, candidateBenchmark{
+		Candidate:    artemis.Candidate{},
+		HTTPStatus:   http.StatusOK,
+		OptionNumber: 1,
+		ResolveScale: presenter.ResolveScaleMedium,
+	})
+}
+
 func BenchmarkCandidate_gophers_1_medium(b *testing.B) {
 	benchmarkCandidates(b, candidateBenchmark{
 		Candidate:    gophers.Candidate{},
@@ -416,6 +472,15 @@ func BenchmarkCandidate_gqlgen_servicemodels_7000_medium(b *testing.B) {
 	})
 }
 
+func BenchmarkCandidate_artemis_7000_medium(b *testing.B) {
+	benchmarkCandidates(b, candidateBenchmark{
+		Candidate:    artemis.Candidate{},
+		HTTPStatus:   http.StatusOK,
+		OptionNumber: 7000,
+		ResolveScale: presenter.ResolveScaleMedium,
+	})
+}
+
 func BenchmarkCandidate_gophers_7000_medium(b *testing.B) {
 	benchmarkCandidates(b, candidateBenchmark{
 		Candidate:    gophers.Candidate{},
@@ -437,6 +502,15 @@ func BenchmarkCandidate_gqlgen_20000_medium(b *testing.B) {
 func BenchmarkCandidate_gqlgen_servicemodels_20000_medium(b *testing.B) {
 	benchmarkCandidates(b, candidateBenchmark{
 		Candidate:    gqlgensm.Candidate{},
+		HTTPStatus:   http.StatusOK,
+		OptionNumber: 20000,
+		ResolveScale: presenter.ResolveScaleMedium,
+	})
+}
+
+func BenchmarkCandidate_artemis_20000_medium(b *testing.B) {
+	benchmarkCandidates(b, candidateBenchmark{
+		Candidate:    artemis.Candidate{},
 		HTTPStatus:   http.StatusOK,
 		OptionNumber: 20000,
 		ResolveScale: presenter.ResolveScaleMedium,
@@ -472,6 +546,15 @@ func BenchmarkCandidate_gqlgen_servicemodels_1_low(b *testing.B) {
 	})
 }
 
+func BenchmarkCandidate_artemis_1_low(b *testing.B) {
+	benchmarkCandidates(b, candidateBenchmark{
+		Candidate:    artemis.Candidate{},
+		HTTPStatus:   http.StatusOK,
+		OptionNumber: 1,
+		ResolveScale: presenter.ResolveScaleLow,
+	})
+}
+
 func BenchmarkCandidate_gophers_1_low(b *testing.B) {
 	benchmarkCandidates(b, candidateBenchmark{
 		Candidate:    gophers.Candidate{},
@@ -493,6 +576,15 @@ func BenchmarkCandidate_gqlgen_7000_low(b *testing.B) {
 func BenchmarkCandidate_gqlgen_servicemodels_7000_low(b *testing.B) {
 	benchmarkCandidates(b, candidateBenchmark{
 		Candidate:    gqlgensm.Candidate{},
+		HTTPStatus:   http.StatusOK,
+		OptionNumber: 7000,
+		ResolveScale: presenter.ResolveScaleLow,
+	})
+}
+
+func BenchmarkCandidate_artemis_7000_low(b *testing.B) {
+	benchmarkCandidates(b, candidateBenchmark{
+		Candidate:    artemis.Candidate{},
 		HTTPStatus:   http.StatusOK,
 		OptionNumber: 7000,
 		ResolveScale: presenter.ResolveScaleLow,
@@ -529,6 +621,15 @@ func BenchmarkCandidate_gqlgen_20000_low(b *testing.B) {
 func BenchmarkCandidate_gqlgen_servicemodels_20000_low(b *testing.B) {
 	benchmarkCandidates(b, candidateBenchmark{
 		Candidate:    gqlgensm.Candidate{},
+		HTTPStatus:   http.StatusOK,
+		OptionNumber: 20000,
+		ResolveScale: presenter.ResolveScaleLow,
+	})
+}
+
+func BenchmarkCandidate_artemis_20000_low(b *testing.B) {
+	benchmarkCandidates(b, candidateBenchmark{
+		Candidate:    artemis.Candidate{},
 		HTTPStatus:   http.StatusOK,
 		OptionNumber: 20000,
 		ResolveScale: presenter.ResolveScaleLow,

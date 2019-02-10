@@ -2,6 +2,7 @@ module github.com/travelgateX/presenters-benchmark
 
 require (
 	github.com/99designs/gqlgen v0.7.1
+	github.com/botobag/artemis v0.0.0-20190218083601-9135fca7d81b
 	github.com/golang/protobuf v1.2.1-0.20190109072247-347cf4a86c1c
 	github.com/gorilla/websocket v1.4.0 // indirect
 	github.com/graph-gophers/graphql-go v0.0.0-20190108123631-d5b7dc6be53b
