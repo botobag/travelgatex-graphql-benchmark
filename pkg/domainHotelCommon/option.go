@@ -13,7 +13,7 @@ type Option struct {
 	HotelName         *string       `json:"hotelName"`
 	BoardCode         *string       `json:"boardCode"`
 	BoardCodeOriginal string        `gqlgen:"boardCodeSupplier"`
-	PaymentType       PaymentType   `json:"-"`
+	PaymentType       PaymentType   `json:"paymentType"`
 	Status            StatusType    `json:"status"`
 	Occupancies       []Occupancy   `json:"occupancies"`
 	Rooms             []Room        `json:"rooms"`
