@@ -62,7 +62,7 @@ func TestCandidateHandleFunc(t *testing.T, c CandidateHandlerFunc) {
 	}
 	for i := range opts {
 		if !OptionEquals(opts[i], retOpts[i]) {
-			b1, err := json.Marshal(*retOpts[i])
+			b1, err := json.Marshal(opts[i])
 			if err != nil {
 				t.Errorf("error marshalling opt: %v", err)
 			}
