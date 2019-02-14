@@ -28,7 +28,6 @@ func (Candidate) HandlerFunc(options []*presenter.Option) (http.HandlerFunc, err
 	schema, err := graphql.ParseSchema(
 		schema,
 		&graphResolver.QueryResolver{soptions},
-		&graphResolver.MutationResolver{},
 		graphql.Logger(Logger{}),
 	)
 

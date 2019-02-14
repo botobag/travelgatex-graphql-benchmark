@@ -5,8 +5,6 @@ import "presenters-benchmark/pkg/domainHotelCommon"
 type QueryResolver struct {
 	Options []*domainHotelCommon.Option
 }
-type MutationResolver struct{}
-
 func (r *QueryResolver) HotelX() *HotelXQueryResolver {
 
 	return &HotelXQueryResolver{r.Options}
