@@ -4,8 +4,8 @@ github.com/agnivade/levenshtein v1.0.1 h1:3oJU7J3FGFmyhn8KHjmVaZCN5hxTr7GxgRue+s
 github.com/agnivade/levenshtein v1.0.1/go.mod h1:CURSv5d9Uaml+FovSIICkLbAUZ9S4RqaHDIsdSBg7lM=
 github.com/andreyvit/diff v0.0.0-20170406064948-c7f18ee00883 h1:bvNMNQO63//z+xNgfBlViaCIJKLlCJ6/fmUseuG0wVQ=
 github.com/andreyvit/diff v0.0.0-20170406064948-c7f18ee00883/go.mod h1:rCTlJbsFo29Kk6CurOXKm700vrz8f0KW0JNfpkRJY/8=
-github.com/botobag/artemis v0.0.0-20190218083601-9135fca7d81b h1:NmjJzYC9EfglP4UeopGrFRHm7tPvsLskd7MRxvVX2xg=
-github.com/botobag/artemis v0.0.0-20190218083601-9135fca7d81b/go.mod h1:05VDw+Va0RhfqycynUVINsQCaw6cBeXlPmgaf896VSw=
+github.com/botobag/artemis v0.0.0-20190308055923-15a37149b5df h1:z1HPqK59b49YbQTd5L4NO8LDzqsIPbckCr2txLCLx18=
+github.com/botobag/artemis v0.0.0-20190308055923-15a37149b5df/go.mod h1:i4SFmU52ySR9mDU9PF3/RiDp4gdSesULVM9cbQ2btE0=
 github.com/davecgh/go-spew v1.1.0 h1:ZDRjVQ15GmhC3fiQ8ni8+OwkZQO4DARzQgrnXU1Liz8=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/fsnotify/fsnotify v1.4.7 h1:IXs+QLmnXW2CcXuY+8Mzv/fWEsPGWxqefPtCP5CnV9I=
@@ -39,8 +39,8 @@ github.com/travelgateX/go-io v0.0.0-20180723105847-e3ef5670c49d h1:V5nVDxwbsI2Nb
 github.com/travelgateX/go-io v0.0.0-20180723105847-e3ef5670c49d/go.mod h1:s9Pjuy67sLcXww4NVQFQPYv572ezPbNCceb1Pnqlv0w=
 github.com/vektah/gqlparser v1.1.0 h1:3668p2gUlO+PiS81x957Rpr3/FPRWG6cxgCXAvTS1hw=
 github.com/vektah/gqlparser v1.1.0/go.mod h1:1ycwN7Ij5njmMkPPAOaRFY4rET2Enx7IkVv3vaXspKw=
-github.com/willf/bitset v1.1.9 h1:GBtFynGY9ZWZmEC9sWuu41/7VBXPFCOAbCbqTflOg9c=
-github.com/willf/bitset v1.1.9/go.mod h1:RjeCKbqT1RxIR/KWY6phxZiaY1IyutSBfGjNPySAYV4=
+github.com/willf/bitset v1.1.10 h1:NotGKqX0KwQ72NUzqrjZq5ipPNDQex9lo3WpaS8L2sc=
+github.com/willf/bitset v1.1.10/go.mod h1:RjeCKbqT1RxIR/KWY6phxZiaY1IyutSBfGjNPySAYV4=
 golang.org/x/net v0.0.0-20180906233101-161cd47e91fd/go.mod h1:mL1N/T3taQHkDXs73rZJwtUhF3w3ftmwwsq0BUmARs4=
 golang.org/x/net v0.0.0-20190125091013-d26f9f9a57f3 h1:ulvT7fqt0yHWzpJwI57MezWnYDVpCAYBVuYst/L+fAY=
 golang.org/x/net v0.0.0-20190125091013-d26f9f9a57f3/go.mod h1:mL1N/T3taQHkDXs73rZJwtUhF3w3ftmwwsq0BUmARs4=

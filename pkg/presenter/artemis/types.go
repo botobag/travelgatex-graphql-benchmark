@@ -118,23 +118,16 @@ func (search *hotelSearch) Context() *string {
 	return nil
 }
 
-func (search *hotelSearch) Options() []*hotelOptionSearch {
+func (search *hotelSearch) Options() *SearchOptionList {
 	response := search.response
 	if response == nil || response.Options == nil {
 		return nil
 	}
 
-	options := response.Options
-	criteria := search.serializedCriteria
-	result := make([]*hotelOptionSearch, 0, len(options))
-	for _, option := range options {
-		result = append(result, &hotelOptionSearch{
-			option:   option,
-			criteria: criteria,
-		})
+	return &SearchOptionList{
+		options:  response.Options,
+		criteria: search.serializedCriteria,
 	}
-
-	return result
 }
 
 func (search *hotelSearch) Errors() []*common.AdviseMessage {
@@ -253,22 +246,12 @@ func (search *hotelOptionSearch) Status() domainHotelCommon.StatusType {
 	return search.option.Status
 }
 
-func (search *hotelOptionSearch) Occupancies() []*domainHotelCommon.Occupancy {
-	occupancies := search.option.Occupancies
-	result := make([]*domainHotelCommon.Occupancy, len(occupancies))
-	for i := range occupancies {
-		result[i] = &occupancies[i]
-	}
-	return result
+func (search *hotelOptionSearch) Occupancies() OccupancyList {
+	return OccupancyList(search.option.Occupancies)
 }
 
-func (search *hotelOptionSearch) Rooms() []*domainHotelCommon.Room {
-	rooms := search.option.Rooms
-	result := make([]*domainHotelCommon.Room, len(rooms))
-	for i := range rooms {
-		result[i] = &rooms[i]
-	}
-	return result
+func (search *hotelOptionSearch) Rooms() RoomList {
+	return RoomList(search.option.Rooms)
 }
 
 func (search *hotelOptionSearch) Price() *domainHotelCommon.Price {
@@ -279,17 +262,8 @@ func (search *hotelOptionSearch) Supplements() []*domainHotelCommon.Supplement {
 	return search.option.Supplements
 }
 
-func (search *hotelOptionSearch) Surcharges() []*domainHotelCommon.Surcharge {
-	surcharges := search.option.Surcharges
-	if len(surcharges) == 0 {
-		return nil
-	}
-
-	result := make([]*domainHotelCommon.Surcharge, len(surcharges))
-	for i := range surcharges {
-		result[i] = &surcharges[i]
-	}
-	return result
+func (search *hotelOptionSearch) Surcharges() SurchargeList {
+	return SurchargeList(search.option.Surcharges)
 }
 
 func (search *hotelOptionSearch) RateRules() []access.RateRulesType {
@@ -539,12 +513,7 @@ var occupancyType = &graphql.ObjectConfig{
 			Type:        graphql.NonNullOf(graphql.ListOf(graphql.NonNullOf(paxType))),
 			Description: "List of pax of this occupancy.",
 			Resolver: graphql.FieldResolverFunc(func(ctx context.Context, source interface{}, info graphql.ResolveInfo) (interface{}, error) {
-				paxes := source.(*domainHotelCommon.Occupancy).Paxes
-				result := make([]*domainHotelCommon.Pax, len(paxes))
-				for i := range paxes {
-					result[i] = &paxes[i]
-				}
-				return result, nil
+				return PaxList(source.(*domainHotelCommon.Occupancy).Paxes), nil
 			}),
 		},
 	},
@@ -951,12 +920,7 @@ This information is mandatory.`,
 			Type:        graphql.NonNullOf(graphql.ListOf(graphql.NonNullOf(ruleType))),
 			Description: "Breakdown of the applied rules for a markup",
 			Resolver: graphql.FieldResolverFunc(func(ctx context.Context, source interface{}, info graphql.ResolveInfo) (interface{}, error) {
-				rules := source.(*domainHotelCommon.Markup).Rules
-				result := make([]*domainHotelCommon.Rule, len(rules))
-				for i := range rules {
-					result[i] = &rules[i]
-				}
-				return result, nil
+				return RuleList(source.(*domainHotelCommon.Markup).Rules), nil
 			}),
 		},
 	},
@@ -1312,12 +1276,7 @@ var cancelPolicyType = &graphql.ObjectConfig{
 			Type:        graphql.ListOf(graphql.NonNullOf(cancelPenaltyType)),
 			Description: "Specifies the resort name.",
 			Resolver: graphql.FieldResolverFunc(func(ctx context.Context, source interface{}, info graphql.ResolveInfo) (interface{}, error) {
-				cancelPenalties := source.(*domainHotelCommon.CancelPolicy).CancelPenalties
-				result := make([]*domainHotelCommon.CancelPenalty, len(cancelPenalties))
-				for i := range cancelPenalties {
-					result[i] = &cancelPenalties[i]
-				}
-				return result, nil
+				return CancelPenaltyList(source.(*domainHotelCommon.CancelPolicy).CancelPenalties), nil
 			}),
 		},
 	},
